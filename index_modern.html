@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Free Mobile Recharge</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.95);}
+      to {opacity: 1; transform: scale(1);}
+    }
+    h2 {
+      color: #333;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin: 12px 0;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    button {
+      width: 100%;
+      padding: 14px;
+      background-color: #ff5722;
+      color: #fff;
+      font-size: 16px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background-color: #e64a19;
+    }
+    .message {
+      margin-top: 25px;
+      background: #e0f7e9;
+      padding: 20px;
+      border-radius: 12px;
+      display: none;
+      color: #2e7d32;
+      border: 1px solid #a5d6a7;
+      font-size: 15px;
+    }
+    .emoji {
+      font-size: 22px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>📲 Free Mobile Recharge</h2>
+    <input type="text" id="mobile" placeholder="📱 Enter Mobile Number" maxlength="10"/>
+    <select id="operator">
+      <option value="">📡 Select SIM Company</option>
+      <option>Jio</option>
+      <option>Airtel</option>
+      <option>Vi</option>
+      <option>BSNL</option>
+    </select>
+    <select id="plan">
+      <option value="">💳 Select Recharge Plan</option>
+      <option>₹49 - 14 Days</option>
+      <option>₹199 - 28 Days</option>
+      <option>₹399 - 56 Days</option>
+    </select>
+    <button onclick="fakeRecharge()">🚀 Recharge Now</button>
+    <div class="message" id="successMsg">
+      ✅ Recharge Successful!<br><br>
+      ✉️ SMS Sent: "Dear user, your number has been successfully recharged with the selected plan. Enjoy your benefits!"
+    </div>
+  </div>
+  <script>
+    function fakeRecharge() {
+      const mobile = document.getElementById("mobile").value;
+      const operator = document.getElementById("operator").value;
+      const plan = document.getElementById("plan").value;
+      if (mobile.length === 10 && operator && plan) {
+        document.getElementById("successMsg").style.display = "block";
+      } else {
+        alert("⚠️ Please fill all fields correctly.");
+      }
+    }
+  </script>
+</body>
+</html>
